@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://csj1kgeeke5sd"]
+
+[ext_resource type="Texture2D" uid="uid://cbb2e00s1ojkp" path="res://res/props/towerDefense_tile251.png" id="1_vbo5i"]
+[ext_resource type="Script" path="res://Missile.gd" id="2_38quf"]
+
+[node name="Missile" type="Sprite2D"]
+position = Vector2(181, -43)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_vbo5i")
+script = ExtResource("2_38quf")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="fire"]

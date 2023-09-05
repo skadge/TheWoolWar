@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhk40bluyhjb2"]
+
+[ext_resource type="Texture2D" uid="uid://cwnbt35f7d0x" path="res://res/splats/splat00.png" id="1_4yb7p"]
+[ext_resource type="Script" path="res://splat.gd" id="1_t800l"]
+[ext_resource type="AudioStream" uid="uid://dekdd1w78w7bn" path="res://res/sounds/splash.wav" id="3_ajbyu"]
+
+[node name="Splat" type="Node2D"]
+modulate = Color(1, 1, 1, 0.506602)
+y_sort_enabled = true
+script = ExtResource("1_t800l")
+color = Color(0.839216, 0.192157, 0.25098, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-36, -1, -46, 10, -11, 6, -13, 22, 4, 16, 23, 20, 34, 16, 29, 9, 40, 3, 24, -3, 35, -12, 24, -15, 12, -15, -2, -25, -5, -8, -42, -9)
+
+[node name="SplatTex" type="Sprite2D" parent="Area2D"]
+modulate = Color(0.839216, 0.192157, 0.25098, 1)
+texture = ExtResource("1_4yb7p")
+
+[node name="RemoveTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="FirstSplahTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ajbyu")
+
+[connection signal="area_entered" from="Area2D" to="." method="on_sheep"]
+[connection signal="timeout" from="RemoveTimer" to="." method="remove"]

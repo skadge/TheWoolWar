@@ -1,0 +1,141 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6atgh5ctd4ll"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_aeur7"]
+[ext_resource type="Script" path="res://Counter.gd" id="1_xm5ww"]
+[ext_resource type="FontFile" uid="uid://ysrd4lrcde8s" path="res://res/SigmarOne.otf" id="2_f35nv"]
+[ext_resource type="Texture2D" uid="uid://b23r2ixqg6c7q" path="res://res/backgrounds/border.png" id="2_y6k8s"]
+[ext_resource type="PackedScene" uid="uid://34871lrs8ot0" path="res://ScoreCounter.tscn" id="3_l1eh5"]
+[ext_resource type="PackedScene" uid="uid://of10xddxwm5m" path="res://building_btn.tscn" id="5_6fsjg"]
+[ext_resource type="Script" path="res://BuildingBar.gd" id="5_cg3ao"]
+[ext_resource type="PackedScene" uid="uid://cvb6m4jr6haj" path="res://countdown.tscn" id="5_lvj1h"]
+[ext_resource type="Texture2D" uid="uid://dbqnely2ceot2" path="res://res/buttons/tower1_btn.png" id="5_ppk8h"]
+[ext_resource type="Texture2D" uid="uid://drsgakm50tsw0" path="res://res/buttons/tower1_btn_pressed.png" id="6_34qxy"]
+[ext_resource type="Texture2D" uid="uid://rwvw84fydvxw" path="res://res/buttons/cancel_btn.png" id="9_5h4te"]
+[ext_resource type="Texture2D" uid="uid://c8uma84nhy7ct" path="res://res/buttons/tower2_btn.png" id="9_r3eiu"]
+[ext_resource type="Texture2D" uid="uid://cbyl40myltau8" path="res://res/buttons/tower2_btn_pressed.png" id="10_lxswb"]
+[ext_resource type="Texture2D" uid="uid://dpknm0dhcu2e" path="res://res/buttons/cancel_btn_pressed.png" id="10_vi0p0"]
+[ext_resource type="PackedScene" uid="uid://b88b05yu6pgy1" path="res://tower2.tscn" id="11_bhddo"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_aeur7")
+
+[node name="Border" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.447059)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_y6k8s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.121569, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("2_f35nv")
+theme_override_font_sizes/font_size = 30
+text = "Hello"
+script = ExtResource("1_xm5ww")
+
+[node name="ScoresContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Player1" parent="VBoxContainer/ScoresContainer" instance=ExtResource("3_l1eh5")]
+layout_mode = 2
+
+[node name="Player2" parent="VBoxContainer/ScoresContainer" instance=ExtResource("3_l1eh5")]
+layout_mode = 2
+
+[node name="Player3" parent="VBoxContainer/ScoresContainer" instance=ExtResource("3_l1eh5")]
+layout_mode = 2
+
+[node name="Player4" parent="VBoxContainer/ScoresContainer" instance=ExtResource("3_l1eh5")]
+layout_mode = 2
+
+[node name="Countdown" parent="." instance=ExtResource("5_lvj1h")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 376.0
+offset_top = 423.0
+offset_right = 776.0
+offset_bottom = 579.0
+
+[node name="ActivePlayer" type="Label" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+offset_left = 376.0
+offset_top = 578.0
+offset_right = 776.0
+offset_bottom = 638.0
+theme_override_fonts/font = ExtResource("2_f35nv")
+theme_override_font_sizes/font_size = 20
+text = "Rouge a la tondeuse"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_xm5ww")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TowersBar" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("5_cg3ao")
+
+[node name="Tower1Btn" parent="HBoxContainer/TowersBar" instance=ExtResource("5_6fsjg")]
+layout_mode = 2
+texture = ExtResource("5_ppk8h")
+texture_pressed = ExtResource("6_34qxy")
+
+[node name="Tower2Btn" parent="HBoxContainer/TowersBar" instance=ExtResource("5_6fsjg")]
+layout_mode = 2
+texture = ExtResource("9_r3eiu")
+texture_pressed = ExtResource("10_lxswb")
+target_tower = ExtResource("11_bhddo")
+
+[node name="CancelBtn" parent="HBoxContainer/TowersBar" instance=ExtResource("5_6fsjg")]
+visible = false
+layout_mode = 2
+texture = ExtResource("9_5h4te")
+texture_pressed = ExtResource("10_vi0p0")
+has_label = false
+
+[node name="Container" type="Container" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Container2" type="Container" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2

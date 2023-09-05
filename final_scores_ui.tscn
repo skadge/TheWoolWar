@@ -1,0 +1,201 @@
+[gd_scene load_steps=11 format=3 uid="uid://ciuth6ciu7vw"]
+
+[ext_resource type="Script" path="res://final_scores_ui.gd" id="1_fujex"]
+[ext_resource type="FontFile" uid="uid://ysrd4lrcde8s" path="res://res/SigmarOne.otf" id="2_muqws"]
+[ext_resource type="Texture2D" uid="uid://cfedw7hyhpboi" path="res://res/props/flat_medal1.png" id="3_5vo57"]
+[ext_resource type="Texture2D" uid="uid://cb4c31xgf22g8" path="res://res/props/flat_medal7.png" id="4_lxp22"]
+[ext_resource type="Texture2D" uid="uid://cts10tbrpwlsl" path="res://res/props/flat_medal2.png" id="5_nbisc"]
+[ext_resource type="Texture2D" uid="uid://qnwo6apj80ls" path="res://res/props/chocolate_medal.png" id="6_18cev"]
+[ext_resource type="Texture2D" uid="uid://bkpy1mj36bbbh" path="res://res/props/red_button09.png" id="7_tibgp"]
+[ext_resource type="Texture2D" uid="uid://boy7cuyrl4grn" path="res://res/props/green_button12.png" id="8_aeuhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8gnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w52g"]
+
+[node name="FinalScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fujex")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.67451)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.792157, 0.682353, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 60
+text = "Scores"
+horizontal_alignment = 1
+
+[node name="Gold" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Color" type="ColorRect" parent="CenterContainer/VBoxContainer/Gold"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Gold"]
+layout_mode = 2
+texture = ExtResource("3_5vo57")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Gold"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.607843, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+text = "Rouge a tondu 30 moutons"
+
+[node name="Silver" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Color" type="ColorRect" parent="CenterContainer/VBoxContainer/Silver"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Silver"]
+layout_mode = 2
+texture = ExtResource("4_lxp22")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Silver"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.607843, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+text = "Rouge a tondu 30 moutons"
+
+[node name="Bronze" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Color" type="ColorRect" parent="CenterContainer/VBoxContainer/Bronze"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Bronze"]
+layout_mode = 2
+texture = ExtResource("5_nbisc")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Bronze"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.607843, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+text = "Rouge a tondu 30 moutons"
+
+[node name="Chocolate" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Color" type="ColorRect" parent="CenterContainer/VBoxContainer/Chocolate"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/Chocolate"]
+layout_mode = 2
+texture = ExtResource("6_18cev")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Chocolate"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.607843, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+text = "Rouge a tondu 30 moutons"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+offset_left = 627.0
+offset_top = 567.0
+offset_right = 887.0
+offset_bottom = 635.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_tibgp")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="ExitButton" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.243137, 0.109804, 0.0156863, 1)
+theme_override_colors/font_pressed_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_hover_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_focus_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k8gnx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6w52g")
+text = "Quit"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+offset_left = 226.0
+offset_top = 567.0
+offset_right = 585.0
+offset_bottom = 635.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_aeuhn")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 6
+
+[node name="NextRoundButton" type="Button" parent="NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.243137, 0.109804, 0.0156863, 1)
+theme_override_colors/font_pressed_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_hover_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_focus_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.372549, 0.180392, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_muqws")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k8gnx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6w52g")
+text = "Another round!"
+
+[connection signal="pressed" from="NinePatchRect/ExitButton" to="." method="exit"]
+[connection signal="pressed" from="NinePatchRect2/NextRoundButton" to="." method="next_round"]

@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyds2prhbebqn"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_1mldd"]
+[ext_resource type="PackedScene" uid="uid://dif8xgmg70qu2" path="res://map1.tscn" id="2_gg7qg"]
+[ext_resource type="Script" path="res://res/Background.gd" id="2_ieevu"]
+[ext_resource type="Texture2D" uid="uid://cdyih44niu7bq" path="res://res/backgrounds/uncolored.png" id="2_mtix7"]
+[ext_resource type="Texture2D" uid="uid://cl2xdmi0rhtb3" path="res://res/backgrounds/cloud6.png" id="4_2fffk"]
+[ext_resource type="PackedScene" uid="uid://b6atgh5ctd4ll" path="res://ui.tscn" id="4_fdq8y"]
+[ext_resource type="PackedScene" uid="uid://ciuth6ciu7vw" path="res://final_scores_ui.tscn" id="4_pip0y"]
+[ext_resource type="Texture2D" uid="uid://dtpbgkc3rfkya" path="res://res/backgrounds/cloud8.png" id="5_1vge4"]
+[ext_resource type="PackedScene" uid="uid://c4m7pi4sywid0" path="res://launch_ui.tscn" id="5_5ms8a"]
+[ext_resource type="AudioStream" uid="uid://rqm0vld55ble" path="res://res/sounds/melody.mp3" id="5_701kk"]
+[ext_resource type="PackedScene" uid="uid://b78oulwnksxyt" path="res://launch_countdown_ui.tscn" id="6_qrr3n"]
+
+[sub_resource type="Curve2D" id="Curve2D_b23v6"]
+_data = {
+"points": PackedVector2Array(67.7083, 3.56359, -67.7083, -3.56359, -761, -356, -90.8717, -1.7818, 90.8717, 1.7818, -447, -304, -117.599, 8.90899, 117.599, -8.90899, -148, -361, -106.908, 1.7818, 106.908, -1.7818, 252, -328, -167.489, 1.7818, 167.489, -1.7818, 629, -360, -167.489, -3.56359, 167.489, 3.56359, 980, -313)
+}
+point_count = 6
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_1mldd")
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("2_ieevu")
+
+[node name="Uncolored" type="Sprite2D" parent="Background"]
+position = Vector2(124.5, -5.50001)
+scale = Vector2(1.2908, 1.29475)
+texture = ExtResource("2_mtix7")
+
+[node name="Path2D" type="Path2D" parent="Background"]
+position = Vector2(-14, 8)
+curve = SubResource("Curve2D_b23v6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Background/Path2D"]
+position = Vector2(-761, -356)
+rotation = 0.175927
+rotates = false
+
+[node name="Cloud6" type="Sprite2D" parent="Background/Path2D/PathFollow2D"]
+rotation = -0.294961
+texture = ExtResource("4_2fffk")
+
+[node name="Path2D2" type="Path2D" parent="Background"]
+position = Vector2(-14, 93)
+curve = SubResource("Curve2D_b23v6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Background/Path2D2"]
+position = Vector2(-761, -356)
+rotation = 0.175927
+rotates = false
+
+[node name="Cloud8" type="Sprite2D" parent="Background/Path2D2/PathFollow2D"]
+rotation = -0.175927
+texture = ExtResource("5_1vge4")
+
+[node name="Map" parent="." instance=ExtResource("2_gg7qg")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(124, -5)
+zoom = Vector2(0.775, 0.775)
+
+[node name="Splats" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Buildings" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Surprises" type="Node2D" parent="."]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UILayer" instance=ExtResource("4_fdq8y")]
+metadata/_edit_use_anchors_ = true
+
+[node name="FinalScores" parent="UILayer" instance=ExtResource("4_pip0y")]
+visible = false
+
+[node name="LaunchUI" parent="UILayer" instance=ExtResource("5_5ms8a")]
+
+[node name="LaunchCountdown" parent="UILayer" instance=ExtResource("6_qrr3n")]
+visible = false
+
+[node name="SheepGeneratorTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_701kk")
+
+[node name="ActiveBuilding" type="Node2D" parent="."]
+
+[node name="SurpiseSpawningTimer" type="Timer" parent="."]
+
+[editable path="UILayer/UI"]

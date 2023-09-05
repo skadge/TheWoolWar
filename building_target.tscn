@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjdtajj6tfju0"]
+
+[ext_resource type="Texture2D" uid="uid://dyb46ua0ox5ej" path="res://res/isometric/towers/target_overlay.svg" id="1_5v863"]
+[ext_resource type="Script" path="res://building_target.gd" id="1_f5vt0"]
+
+[node name="BuildingTarget" type="Node2D"]
+script = ExtResource("1_f5vt0")
+
+[node name="TargetOverlay" type="Sprite2D" parent="."]
+texture = ExtResource("1_5v863")
+offset = Vector2(0, 15)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv8n3hfnehjm1"]
+
+[ext_resource type="Script" path="res://Lifebar.gd" id="1_vm30i"]
+[ext_resource type="Texture2D" uid="uid://bvs4c733va6gj" path="res://res/props/lifebar_bg.svg" id="2_b8ty7"]
+[ext_resource type="Texture2D" uid="uid://bo2nxahu8bjdb" path="res://res/props/lifebar.svg" id="3_gtqxt"]
+
+[node name="Lifebar" type="Node2D"]
+position = Vector2(0, 15)
+script = ExtResource("1_vm30i")
+
+[node name="Lifebar_bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_b8ty7")
+centered = false
+offset = Vector2(-40, -5)
+region_enabled = true
+region_rect = Rect2(0, 0, 80, 11)
+
+[node name="Lifebar" type="Sprite2D" parent="."]
+texture = ExtResource("3_gtqxt")
+centered = false
+offset = Vector2(-40, -5)
+region_enabled = true
+region_rect = Rect2(0, 0, 80, 11)
