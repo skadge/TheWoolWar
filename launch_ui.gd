@@ -1,6 +1,6 @@
 extends Control
 
-@onready var start_btn = $NinePatchRect/Button
+@onready var start_btn = $Button
 @onready var player1_label = $VBoxContainer/Player1/NameEdit
 @onready var player2_label = $VBoxContainer/Player2/NameEdit
 @onready var player3_label = $VBoxContainer/Player3/NameEdit

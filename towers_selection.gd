@@ -15,3 +15,4 @@ func _input_event(viewport, event, shape_idx):
 	#and event.button_index == MOUSE_BUTTON_LEFT \
 	#and event.is_pressed():
 	#	get_parent().selected = !get_parent().selected
+	pass

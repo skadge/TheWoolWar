@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://surprise.gd" id="1_r55ly"]
 [ext_resource type="Texture2D" uid="uid://cgb0w4aqoqyuw" path="res://res/props/present.svg" id="2_t0gq2"]
-[ext_resource type="Script" path="res://res/present_mouse_event.gd" id="3_ny8pc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l3fmw"]
 radius = 16.0
@@ -14,7 +13,6 @@ script = ExtResource("1_r55ly")
 texture = ExtResource("2_t0gq2")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_ny8pc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(5, -7)

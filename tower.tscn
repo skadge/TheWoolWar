@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://tower.gd" id="1_08uxu"]
 [ext_resource type="Texture2D" uid="uid://60agvgw6md7j" path="res://res/isometric/towers/tower1.png" id="1_cswuq"]
 [ext_resource type="Script" path="res://towers_selection.gd" id="3_7nvr7"]
-[ext_resource type="Texture2D" uid="uid://be5kad43is0jm" path="res://res/isometric/towers/tower1-splats.png" id="3_8ybi6"]
 [ext_resource type="Script" path="res://TowerRange.gd" id="4_65m3h"]
 [ext_resource type="Shader" path="res://tower_outline.gdshader" id="4_v3orn"]
 [ext_resource type="Texture2D" uid="uid://cbt3tkvp8v6xr" path="res://res/splats/splat00.svg" id="6_nqf6f"]
+[ext_resource type="Texture2D" uid="uid://bhrfqwh6pp546" path="res://res/isometric/towers/tower1_splats.png" id="7_sqvr0"]
 [ext_resource type="PackedScene" uid="uid://cv8n3hfnehjm1" path="res://lifebar.tscn" id="8_e4csh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_knax7"]
@@ -25,7 +25,7 @@ _data = {
 point_count = 2
 
 [node name="Tower" type="Node2D"]
-z_index = 1
+z_index = 3
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_08uxu")
@@ -66,7 +66,7 @@ texture = ExtResource("6_nqf6f")
 [node name="Splats" type="Sprite2D" parent="Area2D"]
 modulate = Color(0.819608, 0.694118, 0.14902, 1)
 position = Vector2(0, -75)
-texture = ExtResource("3_8ybi6")
+texture = ExtResource("7_sqvr0")
 
 [node name="Lifebar" parent="Area2D" instance=ExtResource("8_e4csh")]
 
