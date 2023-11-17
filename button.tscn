@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://snm6ykpk4gjk"]
+
+[ext_resource type="Script" path="res://button.gd" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://cwv3373homa3v" path="res://res/buttons/play_btn.png" id="1_nxiqt"]
+[ext_resource type="Texture2D" uid="uid://cwmc515btp6vw" path="res://res/buttons/play_btn_pressed.png" id="2_bmoy1"]
+[ext_resource type="Theme" uid="uid://cox88sg13y40b" path="res://ui_theme.tres" id="4_x0k7b"]
+
+[node name="Button" type="TextureButton"]
+offset_left = 502.0
+offset_top = 514.0
+offset_right = 665.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_nxiqt")
+texture_pressed = ExtResource("2_bmoy1")
+stretch_mode = 4
+script = ExtResource("1_cayip")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_x0k7b")
+theme_override_colors/font_color = Color(0.207843, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1

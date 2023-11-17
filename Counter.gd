@@ -12,7 +12,7 @@ func _process(delta):
 	pass
 
 func set_player(name):
-	text = name + " a la tondeuse"
+	text = name
 	#var new_stylebox_normal = get_theme_stylebox("normal").duplicate()
 	#color.a = 0.6
 	#new_stylebox_normal.bg_color = color

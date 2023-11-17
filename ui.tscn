@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6atgh5ctd4ll"]
+[gd_scene load_steps=17 format=3 uid="uid://b6atgh5ctd4ll"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_aeur7"]
 [ext_resource type="Script" path="res://Counter.gd" id="1_xm5ww"]
-[ext_resource type="FontFile" uid="uid://ysrd4lrcde8s" path="res://res/SigmarOne.otf" id="2_f35nv"]
+[ext_resource type="Texture2D" uid="uid://dpr50u5cfnwxo" path="res://res/backgrounds/bg_scores.png" id="2_7e4a2"]
 [ext_resource type="Texture2D" uid="uid://b23r2ixqg6c7q" path="res://res/backgrounds/border.png" id="2_y6k8s"]
 [ext_resource type="PackedScene" uid="uid://34871lrs8ot0" path="res://ScoreCounter.tscn" id="3_l1eh5"]
+[ext_resource type="Theme" uid="uid://cox88sg13y40b" path="res://ui_theme.tres" id="4_nbwt8"]
 [ext_resource type="PackedScene" uid="uid://of10xddxwm5m" path="res://building_btn.tscn" id="5_6fsjg"]
 [ext_resource type="Script" path="res://BuildingBar.gd" id="5_cg3ao"]
 [ext_resource type="PackedScene" uid="uid://cvb6m4jr6haj" path="res://countdown.tscn" id="5_lvj1h"]
@@ -25,6 +26,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_aeur7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_7e4a2")
 
 [node name="Border" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.447059)
@@ -47,9 +54,11 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.298039, 0.121569, 0.00392157, 1)
-theme_override_fonts/font = ExtResource("2_f35nv")
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("4_nbwt8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.964706, 0.933333, 0.882353, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 35
 text = "Hello"
 script = ExtResource("1_xm5ww")
 
@@ -87,8 +96,8 @@ offset_left = 376.0
 offset_top = 578.0
 offset_right = 776.0
 offset_bottom = 638.0
-theme_override_fonts/font = ExtResource("2_f35nv")
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("4_nbwt8")
+theme_override_font_sizes/font_size = 34
 text = "Rouge a la tondeuse"
 horizontal_alignment = 1
 vertical_alignment = 1

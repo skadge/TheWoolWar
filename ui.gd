@@ -21,7 +21,7 @@ func _process(delta):
 	pass
 
 func on_count_updated(count):
-	sheep_counter.text = "Encore " + str(count) + " moutons à tondre!"
+	sheep_counter.text = "Reste " + str(count) + " moutons"
 
 func on_scores_updated(colors, money, score, active_player):
 

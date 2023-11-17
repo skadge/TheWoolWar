@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://ScoreCounter.gd" id="1_onpi8"]
 [ext_resource type="Texture2D" uid="uid://ddv2x53fap0g2" path="res://res/props/grey_circle.png" id="2_npgvj"]
-[ext_resource type="FontFile" uid="uid://ysrd4lrcde8s" path="res://res/SigmarOne.otf" id="2_wms7w"]
-[ext_resource type="Texture2D" uid="uid://xa8tx8e8dfiu" path="res://res/props/award.png" id="3_awuux"]
+[ext_resource type="Texture2D" uid="uid://xd1jac3cwhwp" path="res://res/props/sheep.svg" id="3_ijmod"]
+[ext_resource type="Theme" uid="uid://cox88sg13y40b" path="res://ui_theme.tres" id="4_3lnwh"]
 [ext_resource type="Texture2D" uid="uid://ihbni73f8l7p" path="res://res/props/coins.svg" id="5_vpuy8"]
 
 [node name="Player1" type="HBoxContainer"]
@@ -18,24 +18,22 @@ stretch_mode = 4
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-modulate = Color(0.8, 0.619608, 0, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-texture = ExtResource("3_awuux")
+texture = ExtResource("3_ijmod")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Sheeps" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_3lnwh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_wms7w")
 theme_override_font_sizes/font_size = 25
 text = "20
 "
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
-modulate = Color(0.8, 0.619608, 0, 1)
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("5_vpuy8")
@@ -44,9 +42,9 @@ stretch_mode = 5
 
 [node name="Money" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_3lnwh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_wms7w")
 theme_override_font_sizes/font_size = 25
 text = "20
 "

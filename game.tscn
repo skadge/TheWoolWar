@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyds2prhbebqn"]
+[gd_scene load_steps=14 format=3 uid="uid://cyds2prhbebqn"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_1mldd"]
 [ext_resource type="PackedScene" uid="uid://dif8xgmg70qu2" path="res://map1.tscn" id="2_gg7qg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c4m7pi4sywid0" path="res://launch_ui.tscn" id="5_5ms8a"]
 [ext_resource type="AudioStream" uid="uid://rqm0vld55ble" path="res://res/sounds/melody.mp3" id="5_701kk"]
 [ext_resource type="PackedScene" uid="uid://b78oulwnksxyt" path="res://launch_countdown_ui.tscn" id="6_qrr3n"]
+[ext_resource type="PackedScene" uid="uid://dnvsrpsxwvevi" path="res://player_select_ui.tscn" id="10_oqr0l"]
 
 [sub_resource type="Curve2D" id="Curve2D_b23v6"]
 _data = {
@@ -81,6 +82,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="LaunchUI" parent="UILayer" instance=ExtResource("5_5ms8a")]
+
+[node name="PlayerSelectUI" parent="UILayer" instance=ExtResource("10_oqr0l")]
+visible = false
 
 [node name="LaunchCountdown" parent="UILayer" instance=ExtResource("6_qrr3n")]
 visible = false

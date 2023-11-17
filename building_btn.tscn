@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://of10xddxwm5m"]
+[gd_scene load_steps=8 format=3 uid="uid://of10xddxwm5m"]
 
 [ext_resource type="Script" path="res://TowerBtn.gd" id="1_fn18x"]
 [ext_resource type="PackedScene" uid="uid://b2qe7j4wve82y" path="res://tower.tscn" id="2_4k8nk"]
 [ext_resource type="Texture2D" uid="uid://dbqnely2ceot2" path="res://res/buttons/tower1_btn.png" id="4_al650"]
 [ext_resource type="FontFile" uid="uid://ysrd4lrcde8s" path="res://res/SigmarOne.otf" id="4_soh0f"]
+[ext_resource type="Theme" uid="uid://cox88sg13y40b" path="res://ui_theme.tres" id="5_dqq0j"]
 [ext_resource type="Texture2D" uid="uid://drsgakm50tsw0" path="res://res/buttons/tower1_btn_pressed.png" id="5_kfd3m"]
 [ext_resource type="Texture2D" uid="uid://gemo1inl7wmb" path="res://res/props/impossible.svg" id="6_nwgbd"]
 
@@ -19,9 +20,10 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="VBox"]
 layout_mode = 2
+theme = ExtResource("5_dqq0j")
+theme_override_colors/font_color = Color(0.180392, 0.180392, 0.180392, 1)
 theme_override_constants/line_spacing = 0
-theme_override_fonts/font = ExtResource("4_soh0f")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 18
 text = "Tatata
 30"
 horizontal_alignment = 1

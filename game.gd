@@ -14,6 +14,7 @@ signal game_over
 
 @onready var UI = $UILayer/UI
 @onready var StartScreen = $UILayer/LaunchUI
+@onready var PlayerSelect = $UILayer/PlayerSelectUI
 @onready var CountdownScreen = $UILayer/LaunchCountdown
 @onready var FinalScores = $UILayer/FinalScores
 
@@ -56,7 +57,7 @@ var round_idx = -1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	StartScreen.set_colors(players_colors)
+	PlayerSelect.set_colors(players_colors)
 	play_order.shuffle()
 	
 	$SheepGeneratorTimer.timeout.connect(spawn_sheep)
@@ -77,7 +78,8 @@ func _ready():
 	
 	building_complete.connect(UI.buildings.hide_cancel)
 	
-	StartScreen.start_btn.pressed.connect(start_game)
+	StartScreen.start_btn.pressed.connect(configure_players)
+	PlayerSelect.start_btn.pressed.connect(start_game)
 	
 	UI.buildings.building_created.connect(on_new_building)
 	UI.countdown.timeout.connect(on_countdown_over)
@@ -103,14 +105,19 @@ func on_next_round():
 	scores_changed.emit(players_colors, players_money, players_scores, active_player)
 	start_game()
 	
+func configure_players():
+	StartScreen.visible = false
+	PlayerSelect.visible = true
+	
 func start_game():
-	players_names = [StartScreen.player1_label.text,
-					StartScreen.player2_label.text,
-					StartScreen.player3_label.text,
-					StartScreen.player4_label.text]
+	players_names = [PlayerSelect.player1_label.text,
+					PlayerSelect.player2_label.text,
+					PlayerSelect.player3_label.text,
+					PlayerSelect.player4_label.text]
 	
 	FinalScores.visible=false
 	StartScreen.visible = false
+	PlayerSelect.visible = false
 	CountdownScreen.visible = true
 	CountdownScreen.set_first_player(players_names[play_order[1]], players_colors[play_order[1]])
 	CountdownScreen.countdown.start()

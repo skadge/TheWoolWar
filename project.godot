@@ -13,7 +13,11 @@ config_version=5
 config/name="Wool Wars"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://res/angry-sheep.png"
+boot_splash/fullsize=false
+config/icon="res://res/thewoolwar-icon.png"
+boot_splash/minimum_display_time=500
 
 [autoload]
 

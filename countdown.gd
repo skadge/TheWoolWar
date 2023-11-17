@@ -32,7 +32,7 @@ func start():
 	current = duration
 	label.add_theme_color_override("font_color", Color.DARK_ORANGE)
 	label.add_theme_color_override("font_outline_color", Color.DARK_ORANGE)
-	label.add_theme_font_size_override("font_size", 60)
+	label.add_theme_font_size_override("font_size", 80)
 	
 	label.text = str(current)
 	label.visible = true
@@ -55,7 +55,7 @@ func update():
 		if current <= warn_from:
 			label.add_theme_color_override("font_outline_color", Color.CRIMSON)
 		if current <= alert_from:
-			label.add_theme_font_size_override("font_size", 100)
+			label.add_theme_font_size_override("font_size", 120)
 			label.add_theme_color_override("font_color", Color.CRIMSON)
 		
 

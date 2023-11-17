@@ -1,0 +1,197 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnvsrpsxwvevi"]
+
+[ext_resource type="Script" path="res://launch_ui.gd" id="1_s5llv"]
+[ext_resource type="Texture2D" uid="uid://ddmaakb4mm7lm" path="res://res/landing9.png" id="2_rn0i5"]
+[ext_resource type="Theme" uid="uid://cox88sg13y40b" path="res://ui_theme.tres" id="4_hvflv"]
+[ext_resource type="PackedScene" uid="uid://snm6ykpk4gjk" path="res://button.tscn" id="5_choyq"]
+[ext_resource type="Texture2D" uid="uid://ddv2x53fap0g2" path="res://res/props/grey_circle.png" id="5_wf3bm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0api"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 0.337255)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgjqu"]
+
+[node name="PlayerSelectUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5llv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rn0i5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -339.0
+offset_right = 185.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.827451, 0.956863, 0.807843, 0.627451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -1.0
+offset_right = 175.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Player1"]
+layout_mode = 2
+texture = ExtResource("5_wf3bm")
+
+[node name="Label" type="Label" parent="VBoxContainer/Player1"]
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.372549, 0.180392, 0.0392157, 1)
+text = "Joueur 1:"
+
+[node name="NameEdit" type="LineEdit" parent="VBoxContainer/Player1"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.878431, 0.486275, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/caret_width = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_x0api")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cgjqu")
+text = "Rouge"
+alignment = 1
+max_length = 20
+expand_to_text_length = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Player2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Player2"]
+layout_mode = 2
+texture = ExtResource("5_wf3bm")
+
+[node name="Label" type="Label" parent="VBoxContainer/Player2"]
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.372549, 0.180392, 0.0392157, 1)
+text = "Joueur 2:"
+
+[node name="NameEdit" type="LineEdit" parent="VBoxContainer/Player2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.878431, 0.486275, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/caret_width = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_x0api")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cgjqu")
+text = "Orange"
+alignment = 1
+max_length = 20
+expand_to_text_length = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Player3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Player3"]
+layout_mode = 2
+texture = ExtResource("5_wf3bm")
+
+[node name="Label" type="Label" parent="VBoxContainer/Player3"]
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.372549, 0.180392, 0.0392157, 1)
+text = "Joueur 3:"
+
+[node name="NameEdit" type="LineEdit" parent="VBoxContainer/Player3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.878431, 0.486275, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/caret_width = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_x0api")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cgjqu")
+text = "Violet"
+alignment = 1
+max_length = 20
+expand_to_text_length = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Player4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Player4"]
+layout_mode = 2
+texture = ExtResource("5_wf3bm")
+
+[node name="Label" type="Label" parent="VBoxContainer/Player4"]
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.372549, 0.180392, 0.0392157, 1)
+text = "Joueur 4:"
+
+[node name="NameEdit" type="LineEdit" parent="VBoxContainer/Player4"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_hvflv")
+theme_override_colors/font_color = Color(0.878431, 0.486275, 0.219608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/caret_width = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_x0api")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cgjqu")
+text = "Vert"
+alignment = 1
+max_length = 20
+expand_to_text_length = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Button" parent="." instance=ExtResource("5_choyq")]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 538.0
+offset_right = 650.0
+offset_bottom = 617.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Start"
